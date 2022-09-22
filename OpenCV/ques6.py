@@ -1,5 +1,5 @@
 def dec_to_binary(n):
-    t
+    
     if n==1:
         return 1
     elif n==0:
