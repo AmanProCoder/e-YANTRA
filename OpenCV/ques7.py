@@ -1,32 +1,19 @@
-# Import reduce module
-from functools import reduce
-
-
-# Function to generate the A.P. series
-def generate_AP(a1, d, n):
-
-    AP_series = []
-
-    # Complete this function to return A.P. series
-
-
-    return AP_series
-
-
-# Main function
-if __name__ == '__main__':
-    
-    # take the T (test_cases) input
-    test_cases = int(input())
-
-    # Write the code here to take the a1, d and n values
-
-
-        # Once you have all 3 values, call the generate_AP function to find A.P. series and print it
-        AP_series = generate_AP(a1, d, n)
-
-        # Using lambda and map functions, find squares of terms in AP series and print it
-        sqr_AP_series = 
-
-        # Using lambda and reduce functions, find sum of squares of terms in AP series and print it
-        sum_sqr_AP_series = 
+t=int(input())
+store=[]
+for i in range(t):
+    a=int(input())
+    l=list(map(int,input().split()))
+    store.append(l)
+for l in store:
+    for i in l[-1::-1]:
+        print(i,end=" ")
+    print()
+    for i in l[3::3]:
+        print(i+3,end=" ")
+    print()
+    for i in l[5::5]:
+        print(i-7,end=" ")
+    sum=0
+    for i in l[3:8]:
+        sum=sum+i
+    print("\n"+str(sum))
