@@ -32,6 +32,8 @@ def on_trackbar(val):
     val_min=cv2.getTrackbarPos("Val Min","TrackedBars")
     val_max=cv2.getTrackbarPos("Val Max","TrackedBars")
 
+
+
     print(hue_min,hue_max,sat_min,sat_max,val_min,val_max)
 
     lower=np.array([hue_min,sat_min,val_min])
