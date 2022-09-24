@@ -1,9 +1,9 @@
 t=int(input())
-l={}
-my=[]
+
 ans=[]
 for i in range(t):
-
+    l={}
+    my=[]
     m=int(input())
     for j in range(m):
         s=input()
@@ -20,32 +20,42 @@ for i in range(t):
           
             if(l1[1] not in l):
                 l[l1[1]]=l1[2]
-                print("ADDED Item",l1[1])
+                mystr="ADDED Item "+str(l1[1])
+                ans.append(mystr)
             else:
                 b=int(l[l1[1]])
                 c=int(l1[2])
                 a=b+c
                 l[l1[1]]=str(a)
-                print("UPDATED Item",l1[1])
+                mystr="UPDATED Item "+str(l1[1])
+                ans.append(mystr)
+
         if(s.startswith("DELETE")):
             l1=s.split()
             if(l1[1] not in l):
-                print("Item",l1[1],"does not exist")
+                mystr="Item "+l1[1]+" does not exist"
+                ans.append(mystr)
+
             else:
                 b=int(l[l1[1]])
                 c=int(l1[2])
                 if(b>c):
                     a=b-c
                     l[l1[1]]=str(a)
-                    print("DELETED Item",l1[1])
+                    mystr="DELETED Item "+str(l1[1])
+                    ans.append(mystr)
+
                 else:
-                    print("Item",l1[1],"could not be DELETED")
-  
-x=l.values()
-c=0
-for i in x:
-    c=c+int(i)
-    
-print("total items in inventory:",c)
+                    mystr="Item "+str(l1[1])+" could not be DELETED"
+                    ans.append(mystr)
+    x=l.values()
+    c=0
+    for i in x:
+        c=c+int(i)
+    mystr="Total Items in Inventory: "+str(c)
+    ans.append(mystr)
+
+for i in ans:
+    print(i)
                 
 
